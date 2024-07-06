@@ -10,10 +10,15 @@
                 string birthPlace, ISender sender) =>
             {
                 var query = new GetPlayersByBirthPlaceQuery(birthPlace);
-                var response = await sender.Send(query);
+                var result = await sender.Send(query);
+                var response = result.Adapt<GetPlayersByBirthPlaceResponse>();
+
                 return Results.Ok(response);
             })
-            .WithName("GetPlayersByBirthPlace");
+            .WithName("GetPlayersByBirthPlace")
+            .Produces<GetPlayersByBirthPlaceResponse>(StatusCodes.Status200OK)
+            .ProducesProblem(StatusCodes.Status404NotFound)
+            .ProducesProblem(StatusCodes.Status400BadRequest);
         }
     }
 }

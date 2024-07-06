@@ -1,10 +1,9 @@
 ﻿namespace Athlete.API.Players.GetPlayers
 {
     public record GetPlayersQuery() : IRequest<GetPlayersResult>;
-  
 
     public record GetPlayersResult(
-        IEnumerable<Player> players);
+        IEnumerable<Player> Players);
 
     internal class GetPlayersQueryHandler (
         PlayerContext context)

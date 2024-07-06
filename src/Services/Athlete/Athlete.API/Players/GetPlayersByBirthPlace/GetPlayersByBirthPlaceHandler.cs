@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace Athlete.API.Players.GetPlayersByBirthPlace
+﻿namespace Athlete.API.Players.GetPlayersByBirthPlace
 {
     public record GetPlayersByBirthPlaceQuery(string BirthPlace) : IRequest<GetPlayersByBirthPlaceResult>;
     public record GetPlayersByBirthPlaceResult(
