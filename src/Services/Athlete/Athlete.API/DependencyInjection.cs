@@ -1,4 +1,6 @@
-﻿namespace Athlete.API
+﻿using BuildingBlocks.Exceptions.Handler;
+
+namespace Athlete.API
 {
     public static class DependencyInjection
     {
@@ -8,6 +10,7 @@
                 .AddOpenAPI()
                 .AddMediator()
                 .AddDatabase()
+                .AddExceptionHandling()
                 .AddCarter();
         }
         public static IServiceCollection AddOpenAPI(this IServiceCollection services)
@@ -31,6 +34,11 @@
             {
                 opt.UseInMemoryDatabase("Database");
             });
+        }
+
+        public static IServiceCollection AddExceptionHandling(this IServiceCollection services)
+        {
+            return services.AddExceptionHandler<CustomExceptionHandler>();
         }
     }
 }

@@ -15,6 +15,8 @@ if (app.Environment.IsDevelopment())
 }
 app.UseHttpsRedirection();
 
+app.UseExceptionHandler(_ => { });
+
 app.MapCarter();
 
 using (var scope = app.Services.CreateScope())
