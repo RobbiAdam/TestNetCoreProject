@@ -8,7 +8,12 @@ builder.Services.
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-app.MapGet("/", () => "Hello World!");
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+app.UseHttpsRedirection();
 
 app.MapCarter();
 

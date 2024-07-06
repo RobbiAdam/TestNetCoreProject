@@ -5,9 +5,16 @@
         public static IServiceCollection AddAthleteAPI(this IServiceCollection services)
         {
             return services
+                .AddOpenAPI()
                 .AddMediator()
                 .AddDatabase()
                 .AddCarter();
+        }
+        public static IServiceCollection AddOpenAPI(this IServiceCollection services)
+        {
+            return services
+                .AddEndpointsApiExplorer()
+                .AddSwaggerGen();
         }
 
         public static IServiceCollection AddMediator(this IServiceCollection services)
