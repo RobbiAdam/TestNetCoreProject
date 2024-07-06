@@ -1,4 +1,6 @@
-﻿using BuildingBlocks.Exceptions.Handler;
+﻿using BuildingBlocks.Behaviors;
+using BuildingBlocks.Exceptions.Handler;
+using FluentValidation;
 
 namespace Athlete.API
 {
@@ -9,6 +11,7 @@ namespace Athlete.API
             return services
                 .AddOpenAPI()
                 .AddMediator()
+                .AddValidation()
                 .AddDatabase()
                 .AddExceptionHandling()
                 .AddCarter();
@@ -25,7 +28,12 @@ namespace Athlete.API
             return services.AddMediatR(opt =>
             {
                 opt.RegisterServicesFromAssembly(typeof(Program).Assembly);
+                opt.AddOpenBehavior(typeof(ValidationBehavior<,>));
             });
+        }
+        private static IServiceCollection AddValidation(this IServiceCollection services)
+        {
+            return services.AddValidatorsFromAssembly(typeof(Program).Assembly);
         }
 
         public static IServiceCollection AddDatabase(this IServiceCollection services)

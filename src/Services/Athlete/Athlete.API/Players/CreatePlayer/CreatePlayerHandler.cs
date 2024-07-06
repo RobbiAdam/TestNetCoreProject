@@ -1,8 +1,19 @@
-﻿namespace Athlete.API.Players.CreatePlayer
+﻿using FluentValidation;
+
+namespace Athlete.API.Players.CreatePlayer
 {
     public record CreatePlayerCommand(
         string Name, int Age, string BirthPlace) : ICommand<CreatePlayerResult>;
 
+    public class CreatePlayerValidation : AbstractValidator<CreatePlayerCommand>
+    {
+        public CreatePlayerValidation()
+        {
+            RuleFor(x => x.Name).NotEmpty().WithMessage("Name cannot be empty");
+            RuleFor(x => x.Age).GreaterThan(0).WithMessage("Age must be greater than 0");
+            RuleFor(x => x.BirthPlace).NotEmpty().WithMessage("BirthPlace cannot be empty");
+        }
+    }
     public record CreatePlayerResult(
         Player Player);
 
