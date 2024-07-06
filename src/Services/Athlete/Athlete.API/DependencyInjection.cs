@@ -29,6 +29,7 @@ namespace Athlete.API
             {
                 opt.RegisterServicesFromAssembly(typeof(Program).Assembly);
                 opt.AddOpenBehavior(typeof(ValidationBehavior<,>));
+                opt.AddOpenBehavior(typeof(LoggingBehavior<,>));
             });
         }
         private static IServiceCollection AddValidation(this IServiceCollection services)
