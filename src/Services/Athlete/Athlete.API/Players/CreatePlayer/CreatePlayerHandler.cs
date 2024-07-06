@@ -1,14 +1,14 @@
 ﻿namespace Athlete.API.Players.CreatePlayer
 {
     public record CreatePlayerCommand(
-        string Name, int Age, string BirthPlace) : IRequest<CreatePlayerResult>;
+        string Name, int Age, string BirthPlace) : ICommand<CreatePlayerResult>;
 
     public record CreatePlayerResult(
         Player Player);
 
     internal class CreatePlayerCommandHandler(
         PlayerContext context)
-        : IRequestHandler<CreatePlayerCommand, CreatePlayerResult>
+        : ICommandHandler<CreatePlayerCommand, CreatePlayerResult>
     {
         public async Task<CreatePlayerResult> Handle(CreatePlayerCommand request, CancellationToken cancellationToken)
         {

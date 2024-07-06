@@ -1,6 +1,7 @@
-﻿global using Athlete.API.Data;
-global using Athlete.API.Models;
-global using Carter;
-global using Microsoft.EntityFrameworkCore;
-global using MediatR;
+﻿global using Carter;
 global using Mapster;
+global using MediatR;
+global using Athlete.API.Data;
+global using Athlete.API.Models;
+global using BuildingBlocks.CQRS;
+global using Microsoft.EntityFrameworkCore;

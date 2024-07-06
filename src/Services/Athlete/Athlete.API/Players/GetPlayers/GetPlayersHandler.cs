@@ -1,13 +1,13 @@
 ﻿namespace Athlete.API.Players.GetPlayers
 {
-    public record GetPlayersQuery() : IRequest<GetPlayersResult>;
+    public record GetPlayersQuery() : IQuery<GetPlayersResult>;
 
     public record GetPlayersResult(
         IEnumerable<Player> Players);
 
     internal class GetPlayersQueryHandler (
         PlayerContext context)
-        : IRequestHandler<GetPlayersQuery, GetPlayersResult>
+        : IQueryHandler<GetPlayersQuery, GetPlayersResult>
     {
         public async Task<GetPlayersResult> Handle(GetPlayersQuery query, CancellationToken cancellationToken)
         {

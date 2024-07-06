@@ -7,7 +7,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{91
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Athlete", "Athlete", "{B0839579-37C6-4D2F-BA08-8722CDAE2204}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athlete.API", "Services\Athlete\Athlete.API\Athlete.API.csproj", "{7F40AEA2-7DC0-4B7C-BA84-96828A1A81CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Athlete.API", "Services\Athlete\Athlete.API\Athlete.API.csproj", "{7F40AEA2-7DC0-4B7C-BA84-96828A1A81CF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BEDC38A5-CA44-4012-871A-67F41FEA841E} = {BEDC38A5-CA44-4012-871A-67F41FEA841E}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{F22322D9-BBBF-47FC-B3E8-DDBA30420E14}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuildingBlocks", "BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj", "{BEDC38A5-CA44-4012-871A-67F41FEA841E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +26,10 @@ Global
 		{7F40AEA2-7DC0-4B7C-BA84-96828A1A81CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F40AEA2-7DC0-4B7C-BA84-96828A1A81CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F40AEA2-7DC0-4B7C-BA84-96828A1A81CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEDC38A5-CA44-4012-871A-67F41FEA841E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEDC38A5-CA44-4012-871A-67F41FEA841E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEDC38A5-CA44-4012-871A-67F41FEA841E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEDC38A5-CA44-4012-871A-67F41FEA841E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -26,6 +37,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B0839579-37C6-4D2F-BA08-8722CDAE2204} = {91BD7545-7CBD-4B7D-8037-65A72F0A0FB2}
 		{7F40AEA2-7DC0-4B7C-BA84-96828A1A81CF} = {B0839579-37C6-4D2F-BA08-8722CDAE2204}
+		{BEDC38A5-CA44-4012-871A-67F41FEA841E} = {F22322D9-BBBF-47FC-B3E8-DDBA30420E14}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {62C816ED-B0B5-46F7-A3D1-12DEC27EAFE5}
