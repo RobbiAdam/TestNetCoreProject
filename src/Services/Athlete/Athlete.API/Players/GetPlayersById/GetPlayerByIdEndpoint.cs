@@ -1,5 +1,4 @@
-﻿
-namespace Athlete.API.Players.GetPlayersById
+﻿namespace Athlete.API.Players.GetPlayersById
 {
     public record GetPlayerByIdResponse(
         Player Player);

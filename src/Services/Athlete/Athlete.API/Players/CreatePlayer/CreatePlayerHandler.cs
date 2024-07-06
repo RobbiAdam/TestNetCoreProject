@@ -7,14 +7,13 @@
         Player Player);
 
     internal class CreatePlayerCommandHandler(
-        PlayerContext context) 
+        PlayerContext context)
         : IRequestHandler<CreatePlayerCommand, CreatePlayerResult>
     {
         public async Task<CreatePlayerResult> Handle(CreatePlayerCommand request, CancellationToken cancellationToken)
         {
             var player = new Player
             {
-                
                 Name = request.Name,
                 Age = request.Age,
                 BirthPlace = request.BirthPlace

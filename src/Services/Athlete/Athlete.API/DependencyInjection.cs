@@ -4,20 +4,26 @@
     {
         public static IServiceCollection AddAthleteAPI(this IServiceCollection services)
         {
-            services.AddMediatR(opt =>
+            return services
+                .AddMediator()
+                .AddDatabase()
+                .AddCarter();
+        }
+
+        public static IServiceCollection AddMediator(this IServiceCollection services)
+        {
+            return services.AddMediatR(opt =>
             {
                 opt.RegisterServicesFromAssembly(typeof(Program).Assembly);
-
             });
+        }
 
-            services.AddDbContext<PlayerContext>(opt =>
+        public static IServiceCollection AddDatabase(this IServiceCollection services)
+        {
+            return services.AddDbContext<PlayerContext>(opt =>
             {
                 opt.UseInMemoryDatabase("Database");
             });
-
-            services.AddCarter();
-
-            return services;
         }
     }
 }
