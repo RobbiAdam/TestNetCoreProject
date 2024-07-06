@@ -9,9 +9,9 @@
         PlayerContext context)
         : IRequestHandler<GetPlayersQuery, GetPlayersResult>
     {
-        public async Task<GetPlayersResult> Handle(GetPlayersQuery request, CancellationToken cancellationToken)
+        public async Task<GetPlayersResult> Handle(GetPlayersQuery query, CancellationToken cancellationToken)
         {
-            var players = await context.Players.ToListAsync();
+            var players = await context.Players.ToListAsync(cancellationToken);
             return new GetPlayersResult(players);
         }
     }

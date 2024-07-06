@@ -8,10 +8,10 @@
         PlayerContext context) 
         : IRequestHandler<GetPlayersByBirthPlaceQuery, GetPlayersByBirthPlaceResult>
     {
-        public async Task<GetPlayersByBirthPlaceResult> Handle(GetPlayersByBirthPlaceQuery request, CancellationToken cancellationToken)
+        public async Task<GetPlayersByBirthPlaceResult> Handle(GetPlayersByBirthPlaceQuery query, CancellationToken cancellationToken)
         {
             var players = await context.Players
-                .Where(p => p.BirthPlace.ToLower().Contains(request.BirthPlace.ToLower()))
+                .Where(p => p.BirthPlace.ToLower().Contains(query.BirthPlace.ToLower()))
                 .ToListAsync(cancellationToken);
 
             return new GetPlayersByBirthPlaceResult(players);
