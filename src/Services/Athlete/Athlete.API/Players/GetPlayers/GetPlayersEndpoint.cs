@@ -11,7 +11,7 @@
                 var players = await sender.Send(new GetPlayersQuery());
                 return Results.Ok(players);
             })
-                .WithTags("GetPlayers");
+                .WithName("GetPlayers");
 
         }
     }

@@ -6,7 +6,7 @@
     public record GetPlayersResult(
         IEnumerable<Player> players);
 
-    internal class GetPlayersHandler (
+    internal class GetPlayersQueryHandler (
         PlayerContext context)
         : IRequestHandler<GetPlayersQuery, GetPlayersResult>
     {
