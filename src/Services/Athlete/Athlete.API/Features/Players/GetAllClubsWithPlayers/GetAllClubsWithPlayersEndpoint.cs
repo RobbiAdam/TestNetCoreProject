@@ -1,4 +1,4 @@
-﻿using Athlete.API.Clubs.GetClubsWithPlayers;
+﻿using Athlete.API.Features.GetClubsWithPlayers;
 
 namespace Athlete.API.Features.Players.GetAllClubsWithPlayers
 {
@@ -10,8 +10,8 @@ namespace Athlete.API.Features.Players.GetAllClubsWithPlayers
         {
             app.MapGet("/clubs-with-players", async (ISender sender) =>
             {
-                var command = new GetClubsWithPlayersCommand();
-                var result = await sender.Send(command);
+                
+                var result = await sender.Send(new GetClubsWithPlayersQuery());
                 var response = new GetAllClubsWithPlayersResponse(
                     result.Clubs.Select(c => new ClubInfoResponse(c.ClubName, c.PlayerCount, c.Players)).ToList()
                 );

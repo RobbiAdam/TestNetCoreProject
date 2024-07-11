@@ -1,6 +1,6 @@
-﻿namespace Athlete.API.Clubs.GetClubsWithPlayers
+﻿namespace Athlete.API.Features.GetClubsWithPlayers
 {
-    public record GetClubsWithPlayersCommand() : IQuery<GetClubsWithPlayersResult>;
+    public record GetClubsWithPlayersQuery() : IQuery<GetClubsWithPlayersResult>;
 
     public record ClubInfo(string ClubName, int PlayerCount, IEnumerable<Player> Players);
 
@@ -8,9 +8,9 @@
 
     internal class GetClubsWithPlayersCommandHandler(
         PlayerContext context)
-        : IQueryHandler<GetClubsWithPlayersCommand, GetClubsWithPlayersResult>
+        : IQueryHandler<GetClubsWithPlayersQuery, GetClubsWithPlayersResult>
     {
-        public async Task<GetClubsWithPlayersResult> Handle(GetClubsWithPlayersCommand request, CancellationToken cancellationToken)
+        public async Task<GetClubsWithPlayersResult> Handle(GetClubsWithPlayersQuery request, CancellationToken cancellationToken)
         {
             var clubsWithPlayers = await context.Players
                 .GroupBy(p => p.ClubName)
