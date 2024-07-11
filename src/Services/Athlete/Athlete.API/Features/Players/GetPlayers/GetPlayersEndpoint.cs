@@ -1,4 +1,4 @@
-﻿namespace Athlete.API.Players.GetPlayers
+﻿namespace Athlete.API.Features.Players.GetPlayers
 {
     public record GetPlayersResponse(
         IEnumerable<Player> Players);

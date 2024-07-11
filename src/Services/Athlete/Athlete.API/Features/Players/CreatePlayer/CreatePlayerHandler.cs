@@ -1,6 +1,4 @@
-﻿using FluentValidation;
-
-namespace Athlete.API.Players.CreatePlayer
+﻿namespace Athlete.API.Features.Players.CreatePlayer
 {
     public record CreatePlayerCommand(
         string Name, int Age, string BirthPlace) : ICommand<CreatePlayerResult>;

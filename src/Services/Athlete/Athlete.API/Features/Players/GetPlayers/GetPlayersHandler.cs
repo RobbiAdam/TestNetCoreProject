@@ -1,11 +1,11 @@
-﻿namespace Athlete.API.Players.GetPlayers
+﻿namespace Athlete.API.Features.Players.GetPlayers
 {
     public record GetPlayersQuery() : IQuery<GetPlayersResult>;
 
     public record GetPlayersResult(
         IEnumerable<Player> Players);
 
-    internal class GetPlayersQueryHandler (
+    internal class GetPlayersQueryHandler(
         PlayerContext context)
         : IQueryHandler<GetPlayersQuery, GetPlayersResult>
     {

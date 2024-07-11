@@ -1,11 +1,11 @@
-﻿namespace Athlete.API.Players.GetPlayersByBirthPlace
+﻿namespace Athlete.API.Features.Players.GetPlayersByBirthPlace
 {
     public record GetPlayersByBirthPlaceQuery(string BirthPlace) : IQuery<GetPlayersByBirthPlaceResult>;
     public record GetPlayersByBirthPlaceResult(
         IEnumerable<Player> Players);
 
     internal class GetPlayersByBirthPlaceQueryHandler(
-        PlayerContext context) 
+        PlayerContext context)
         : IQueryHandler<GetPlayersByBirthPlaceQuery, GetPlayersByBirthPlaceResult>
     {
         public async Task<GetPlayersByBirthPlaceResult> Handle(GetPlayersByBirthPlaceQuery query, CancellationToken cancellationToken)

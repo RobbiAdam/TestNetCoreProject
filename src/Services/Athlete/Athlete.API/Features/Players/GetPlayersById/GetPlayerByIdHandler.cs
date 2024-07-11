@@ -1,6 +1,6 @@
 ﻿using Athlete.API.Exceptions;
 
-namespace Athlete.API.Players.GetPlayersById
+namespace Athlete.API.Features.Players.GetPlayersById
 {
     public record GetPlayerByIdQuery(
         int Id) : IQuery<GetPlayerByIdResult>;

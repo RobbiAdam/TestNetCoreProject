@@ -1,4 +1,4 @@
-﻿namespace Athlete.API.Players.CreatePlayer
+﻿namespace Athlete.API.Features.Players.CreatePlayer
 {
     public record CreatePlayerRequest(
         string Name, int Age, string BirthPlace);

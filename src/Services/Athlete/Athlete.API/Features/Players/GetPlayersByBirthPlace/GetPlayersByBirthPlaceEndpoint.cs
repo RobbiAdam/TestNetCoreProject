@@ -1,4 +1,4 @@
-﻿namespace Athlete.API.Players.GetPlayersByBirthPlace
+﻿namespace Athlete.API.Features.Players.GetPlayersByBirthPlace
 {
     public record GetPlayersByBirthPlaceResponse(
         IEnumerable<Player> Players);

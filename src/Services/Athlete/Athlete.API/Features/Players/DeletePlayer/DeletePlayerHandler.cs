@@ -1,5 +1,4 @@
-﻿
-namespace Athlete.API.Players.DeletePlayer
+﻿namespace Athlete.API.Features.Players.DeletePlayer
 {
     public record DeletePlayerCommand(
     int Id) : ICommand<DeletePlayerResult>;

@@ -1,6 +1,7 @@
 ﻿global using Carter;
 global using Mapster;
 global using MediatR;
+global using FluentValidation;
 global using Athlete.API.Data;
 global using Athlete.API.Models;
 global using BuildingBlocks.CQRS;

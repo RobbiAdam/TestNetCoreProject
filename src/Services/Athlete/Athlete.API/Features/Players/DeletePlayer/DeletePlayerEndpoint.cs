@@ -1,4 +1,4 @@
-﻿namespace Athlete.API.Players.DeletePlayer
+﻿namespace Athlete.API.Features.Players.DeletePlayer
 {
     public record DeletePlayerResponse(bool IsSuccess);
 
