@@ -10,11 +10,9 @@ namespace Athlete.API.Features.Players.GetAllClubsWithPlayers
         {
             app.MapGet("/clubs-with-players", async (ISender sender) =>
             {
-                
                 var result = await sender.Send(new GetClubsWithPlayersQuery());
-                var response = new GetAllClubsWithPlayersResponse(
-                    result.Clubs.Select(c => new ClubInfoResponse(c.ClubName, c.PlayerCount, c.Players)).ToList()
-                );
+                var response = result.Adapt<GetAllClubsWithPlayersResponse>();
+                
                 return Results.Ok(response);
             })
                 .WithName("GetClubsWithPlayers")

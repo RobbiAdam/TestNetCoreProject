@@ -10,7 +10,7 @@
         PlayerContext context)
         : IQueryHandler<GetClubsWithPlayersQuery, GetClubsWithPlayersResult>
     {
-        public async Task<GetClubsWithPlayersResult> Handle(GetClubsWithPlayersQuery request, CancellationToken cancellationToken)
+        public async Task<GetClubsWithPlayersResult> Handle(GetClubsWithPlayersQuery query, CancellationToken cancellationToken)
         {
             var clubsWithPlayers = await context.Players
                 .GroupBy(p => p.ClubName)
